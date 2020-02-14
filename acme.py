@@ -11,11 +11,11 @@ class Product:
             
     Usage: Acme(self, params) : all params are required for a class        
     '''
-    def __init__(self, name):
+    def __init__(self, name, price=10, weight=20, flammability=.5):
         self.name = name
-        self.price = 10
-        self.weight = 20
-        self.flammability = .5
+        self.price = price
+        self.weight = weight
+        self.flammability = flammability
         self.identifier = randint(1000000,9999999)
         
     def stealability(self):
@@ -46,9 +46,8 @@ class BoxingGlove(Product):
     '''
     Acme sells boxing gloves. This sets additional params
     '''
-    def __init__(self, name):   
+    def __init__(self, name, weight=10, price=10, flammability=.5):   
         super().__init__(self)
-        self.weight = 10
 
     def explode(self):
         '''
