@@ -70,10 +70,6 @@ class BoxingGlove(Product):
         elif 5 >= self.weight <= 15:
             print("Hey that hurt!")
         elif self.weight > 15:
-            print("OUCH!")        
-                
-            
-if __name__ == "__main__":
-    pass
+            print("OUCH!")
 
      
