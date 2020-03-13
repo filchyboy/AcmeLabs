@@ -11,7 +11,7 @@ class Product:
             
     Usage: Acme(self, params) : all params are required for a class        
     '''
-    def __init__(self, name, price=10, weight=20, flammability=.5):
+    def __init__(self, name, price = 10, weight = 20, flammability = .5):
         self.name = name
         self.price = price
         self.weight = weight
@@ -20,7 +20,13 @@ class Product:
         
     def stealability(self):
         '''
-        Determines if a product is highly desirable to steal
+        Determines if a product is highly desirable to steal.
+        
+        Rubric for stealability this is less than or equal to .5 
+        and it's not a good pick to be stolen. 
+        Between .5 and 1 is stealable but not highly prized.
+        Above 1 is the bomb for stealing!
+        
         '''
         steal = (self.price/self.weight)        
         if steal <= .5:
@@ -44,32 +50,30 @@ class Product:
             
 class BoxingGlove(Product):
     '''
-    Acme sells boxing gloves. This sets additional params
-    '''
-    def __init__(self, name, weight=10, price=10, flammability=.5):   
-        super().__init__(self)
+    
+    Acme sells boxing gloves.
+    
 
+    '''
+    def __init__(self, name, price = 10, weight = 10, flammability = .5):   
+        super().__init__(self, weight)
+        
     def explode(self):
         '''
-        Determines if a boxing glove product is likely to explode
+        It's a glove you fool!
         '''
-        explode = (self.flammability*self.weight)
-        if explode < 10:
-            print("It's a glove.")
-        elif 10 >= explode <= 50:
-            print("It's a glove.")
-        elif explode > 50:
-            print("It's a glove.")
+        return("...it's a glove")
+
             
     def punch(self):
         '''
         Determines the effect of a punch
         '''
         if self.weight < 5:
-            print("That tickles.")
+            return("That tickles.")
         elif 5 >= self.weight <= 15:
-            print("Hey that hurt!")
+            return("Hey that hurt!")
         elif self.weight > 15:
-            print("OUCH!")
+            return("OUCH!")
 
      
